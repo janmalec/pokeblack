@@ -6,13 +6,13 @@ pokeblack_obj := audio.o main.o text.o wram.o
 .SECONDARY:
 .PHONY: all clean black
 
-roms := pokeblack.gb
+roms := pokeblack.pocket
 
 all: $(roms)
-black: pokeblack.gb
+black: pokeblack.pocket
 
 clean:
-	rm -f $(roms) $(pokeblack_obj) $(roms:.gb=.sym)
+	rm -f $(roms) $(pokeblack_obj) $(roms:.pocket=.sym)
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' \) -exec rm {} +
 	$(MAKE) clean -C tools/
 
@@ -33,9 +33,9 @@ endif
 $(pokeblack_obj): %.o: %.asm $$(dep)
 	rgbasm -E -h -o $@ $*.asm
 
-pokeblack_opt  = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON BLACK"
+pokeblack_opt  = -jsv -k 01 -l 0x33 -m 0x1b -p 0 -r 03 -t "POKEMON BLACK" -f hg
 
-%.gb: $$(%_obj)
+%.pocket: $$(%_obj)
 	rgblink -n $*.sym -l linkerscript.link -o $@ $^
 	rgbfix $($*_opt) $@
 	sort $*.sym -o $*.sym

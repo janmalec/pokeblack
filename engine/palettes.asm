@@ -538,7 +538,7 @@ CopyGfxToSuperNintendoVRAM:
 	add hl, de
 	dec c
 	jr nz, .loop
-	ld a, $e3
+	ld a, $c7
 	ld [rLCDC], a
 	pop hl
 	call SendSGBPacket

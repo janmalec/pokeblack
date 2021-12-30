@@ -223,7 +223,7 @@ Trade_Cleanup:
 	ret
 
 Trade_ShowPlayerMon:
-	ld a, %10101011
+	ld a, %11010001
 	ld [rLCDC], a
 	ld a, $50
 	ld [hWY], a
@@ -450,7 +450,7 @@ Trade_InitGameboyTransferGfx:
 	ld [hAutoBGTransferEnabled], a
 	call Trade_LoadMonPartySpriteGfx
 	call DelayFrame
-	ld a, %10101011
+	ld a, %11010001
 	ld [rLCDC], a
 	xor a
 	ld [hSCX], a

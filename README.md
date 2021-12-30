@@ -6,6 +6,8 @@ It is possible to download a BPS patch for this hack on [**romhacking.net**][pat
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
+I modified this rom to compile in .pocket format using some guesswork.
+
 ## See also
 
  * **Discord**: [pret][discord]

@@ -317,8 +317,8 @@ PlayShootingStar:
 	call LoadIntroGraphics
 	call EnableLCD
 	ld hl, rLCDC
-	res 5, [hl]
-	set 3, [hl]
+	res 2, [hl]
+	set 4, [hl]
 	ld c, 64
 	call DelayFrames
 	callba AnimateShootingStar
